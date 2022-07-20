@@ -17,7 +17,9 @@
 <body>
 
     <div id="root">
-        <p>{{email}}</p>
+        <p v-if="error">{{error}}</p>
+        <p v-if="!email && !error">IS LOADING...</p>
+        <p v-else>{{email}}</p>
     </div>
 
     <script src="script.js"></script>

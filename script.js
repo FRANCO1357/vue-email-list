@@ -7,6 +7,7 @@ const app = new Vue({
     el: '#root',
     data: {
         email: '',
+        error: '',
     },
     method: {},
     created(){
@@ -14,6 +15,8 @@ const app = new Vue({
         .then((res) => {
             console.log(res.data);
             this.email = res.data.response;
+        }).catch((err) => {
+            this.error = 'Si è verificato un errore';
         })
 
     }
